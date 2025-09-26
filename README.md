@@ -1,5 +1,6 @@
 # YouTube Channel Scraper & Analyzer
 
+##
 This project is a customizable pipeline for scraping and analyzing all videos from a specific Space/technology YouTube channel using the YouTube Data API v3. It scrapes a YouTube channel’s video data, fetching key metrics such as category IDs, titles, views, likes, descriptions, publishedAt dates, tags, and thumbnails to tackle placement strategies. The pipeline displays the top 10 most viewed videos and extracts and prints keywords (tags) from the top 5 viewed videos. Additionally, it enables the understanding of trends related to space topics through tag frequency analysis, description and tag exploration, and basic statistics like average title and description lengths, culminating in sentiment analysis of viewers' comments.
 ---
 
