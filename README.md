@@ -1,17 +1,12 @@
 # YouTube Channel Scraper & Analyzer
-
-This project is a customizable pipeline for scraping and analyzing all videos from a specific Space/technology YouTube channel using the YouTube Data API v3. It scrapes a YouTube channel’s video data, fetching key metrics such as category IDs, titles, views, likes, descriptions, publishedAt dates, tags, and thumbnails to tackle placement strategies. The pipeline displays the top 10 most viewed videos and extracts and prints keywords (tags) from the top 5 viewed videos. Additionally, it enables the understanding of trends related to space topics through tag frequency analysis, description and tag exploration, and basic statistics like average title and description lengths, culminating in sentiment analysis of viewers' comments.
 ---
-
-## About Channel Scraping
-
-This project uses a channel handle to look up the channel ID and its upload playlist, scrape all videos in that playlist, and retrieve statistics and comments for each video. This method is ideal for content creators analyzing their own channel, researchers studying public YouTube creators, and building dashboards for channel performance insights.
-
+## Overview  
+This project is a customizable pipeline for scraping and analyzing all videos from a specific Space/technology YouTube channel using the YouTube Data API v3. It scrapes a YouTube channel’s video data, fetching key metrics such as category IDs, titles, views, likes, descriptions, publishedAt dates, tags, and thumbnails to tackle placement strategies. The pipeline displays the top 10 most viewed videos and extracts and prints keywords (tags) from the top 5 viewed videos. Additionally, it enables the understanding of trends related to space topics through tag frequency analysis, description and tag exploration, and basic statistics like average title and description lengths, culminating in sentiment analysis of viewers' comments.
+About Channel Scraping
+This project uses a channel handle (e.g., astrum) to look up the channel ID and its upload playlist, scrape all videos in that playlist, and retrieve statistics and comments for each video. This method is ideal for content creators analyzing their own channel, researchers studying public YouTube creators, and building dashboards for channel performance insights.
 ---
 
 ## Project Structure
-
-```bash
 youtube_channel_scraper/
 ├── config/
 │   └── config_handler.py             # Load API key from .env or config
@@ -45,47 +40,62 @@ youtube_channel_scraper/
 ├── .env                             # API key (not versioned)
 ├── .gitignore                       # Ignore .env, __pycache__, etc.
 └── README.md                        # Project overview and outputs
-
+---
 
 ## Output Examples
 
-### Top Viewed Videos: 
-Top 10 Most Viewed Videos:
-{'video_id': 'D5XPuS-Y0fg', 'title': 'The Final Images We Will Ever See of Pluto and Arrokoth', 'views': '17669028', 'likes': '228391'}
-{'video_id': '6EbuAEagQj4', 'title': 'The Deepest We Have Ever Seen Into the Sun | SDO 4K', 'views': '9336423', 'likes': '113227'}
-{'video_id': '6l4kr36TzQ4', 'title': "What did NASA's New Horizons discover around Pluto?", 'views': '9196621', 'likes': '122894'}
-{'video_id': 'iogVVja1MYY', 'title': 'The Gravity Illusion', 'views': '9070146', 'likes': '173380'}
-{'video_id': 'tyMbktsAScE', 'title': "NASA Cassini's Final Images of Saturn Stunned Me", 'views': '8997449', 'likes': '183846'}
-{'video_id': 'mggRl80WzbE', 'title': 'What El Niño Will Do to Earth', 'views': '6991834', 'likes': '90602'}
-{'video_id': 'H-hZsoyUEXs', 'title': "The Tragic Final Images of NASA's Opportunity Rover | Opportunity Episode 7", 'views': '6902904', 'likes': '89713'}
-{'video_id': 'UyzBoUvN3PM', 'title': 'What Voyager Detected at the Edge of the Solar System', 'views': '5926816', 'likes': '77872'}
-{'video_id': 'u4tzK89ZfmA', 'title': "Everything We Know About 'Oumuamua", 'views': '5698821', 'likes': '84006'}
-{'video_id': 'YpyXVkqkQgg', 'title': 'Time Does Not Exist. Let me explain with a graph.', 'views': '5519012', 'likes': '120726'}
+### Top 10 Most Viewed Videos:
+| Title                                                                   | Views      | Likes    |
+|-------------------------------------------------------------------------|------------|----------|
+| The Final Images We Will Ever See of Pluto and Arrokoth                | 17,669,028 | 228,391  |
+| The Deepest We Have Ever Seen Into the Sun \| SDO 4K                   | 9,336,423  | 113,227  |
+| What did NASA's New Horizons discover around Pluto?                    | 9,196,621  | 122,894  |
+| The Gravity Illusion                                                   | 9,070,146  | 173,380  |
+| NASA Cassini's Final Images of Saturn Stunned Me                       | 8,997,449  | 183,846  |
+| What El Niño Will Do to Earth                                          | 6,991,834  | 90,602   |
+| The Tragic Final Images of NASA's Opportunity Rover                    | 6,902,904  | 89,713   |
+| What Voyager Detected at the Edge of the Solar System                  | 5,926,816  | 77,872   |
+| Everything We Know About 'Oumuamua                                     | 5,698,821  | 84,006   |
+| Time Does Not Exist. Let me explain with a graph.                      | 5,519,012  | 120,726  |
+---
 
-### Tags (frequent in top videos):
-Top 10 Most Frequent Tags in Top Viewed Videos:
-astrum: 8 times
-astrumspace: 6 times
-nasa: 5 times
-solar system: 4 times
-space: 4 times
-pluto: 3 times
-astronomy: 3 times
-physics: 3 times
-new horizons: 2 times
-charon: 2 times
+### Top 10 Most Frequent Tags in Top Viewed Videos:
 
-### Video Upload Time
-The Final Images We Will Ever See of Pluto and Arrokoth → Uploaded at 21:58:35 UTC
-The Deepest We Have Ever Seen Into the Sun | SDO 4K → Uploaded at 19:30:00 UTC
-What did NASA's New Horizons discover around Pluto? → Uploaded at 14:03:26 UTC
-The Gravity Illusion → Uploaded at 17:00:23 UTC
-NASA Cassini's Final Images of Saturn Stunned Me → Uploaded at 15:06:10 UTC
-What El Niño Will Do to Earth → Uploaded at 21:20:58 UTC
-The Tragic Final Images of NASA's Opportunity Rover | Opportunity Episode 7 → Uploaded at 17:26:44 UTC
-What Voyager Detected at the Edge of the Solar System → Uploaded at 17:30:04 UTC
-Everything We Know About 'Oumuamua → Uploaded at 16:01:29 UTC
-Time Does Not Exist. Let me explain with a graph. → Uploaded at 18:06:22 UTC
+| Tag           | Frequency |
+|---------------|-----------|
+| astrum        | 8         |
+| astrumspace   | 6         |
+| nasa          | 5         |
+| solar system  | 4         |
+| space         | 4         |
+| pluto         | 3         |
+| astronomy     | 3         |
+| physics       | 3         |
+| new horizons  | 2         |
+| charon        | 2         |
+---
 
-### Continuous Enhancement Strategies for the Channel
+### Upload Times (Top Viewed Videos)
+| Title                                                             | Upload Time (UTC) |
+|-------------------------------------------------------------------|--------------------|
+| The Final Images We Will Ever See of Pluto and Arrokoth          | 21:58:35           |
+| The Deepest We Have Ever Seen Into the Sun \| SDO 4K             | 19:30:00           |
+| What did NASA's New Horizons discover around Pluto?              | 14:03:26           |
+| The Gravity Illusion                                             | 17:00:23           |
+| NASA Cassini's Final Images of Saturn Stunned Me                 | 15:06:10           |
+| What El Niño Will Do to Earth                                    | 21:20:58           |
+| The Tragic Final Images of NASA's Opportunity Rover              | 17:26:44           |
+| What Voyager Detected at the Edge of the Solar System            | 17:30:04           |
+| Everything We Know About 'Oumuamua                               | 16:01:29           |
+| Time Does Not Exist. Let me explain with a graph.                | 18:06:22           |
+---
+
+## Continuous Enhancement Strategies for the Channel
 Throughout the project, continuous implementation focuses on understanding trends or recent top searches related to space, earth, and astronaut topics on the internet, utilizing data from Google Trends to continually enrich channel content variety. By referring to channel data analytics reports, the project adjusts video placement strategies, while performing A/B tests on content, upload times, thumbnails, titles, and description strategies to better understand viewer behavior. Additionally, it includes competitor analysis to compare performance with other channels, reply-thread comment scraping, and LDA or embedding-based comment topic modeling to deepen insights. The goal is to increase the CTR rate while keeping track of all strategies implemented on the content to seek performance improvements.
+---
+## Requirements
+
+Install dependencies using:
+
+```bash
+pip install -r requirements.txt
