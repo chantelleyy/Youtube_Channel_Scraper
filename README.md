@@ -1,6 +1,5 @@
 # YouTube Channel Scraper & Analyzer
----
-## Overview  
+
 This project is a customizable pipeline for scraping and analyzing all videos from a specific Space/technology YouTube channel using the YouTube Data API v3. It scrapes a YouTube channel’s video data, fetching key metrics such as category IDs, titles, views, likes, descriptions, publishedAt dates, tags, and thumbnails to tackle placement strategies. The pipeline displays the top 10 most viewed videos and extracts and prints keywords (tags) from the top 5 viewed videos. Additionally, it enables the understanding of trends related to space topics through tag frequency analysis, description and tag exploration, and basic statistics like average title and description lengths, culminating in sentiment analysis of viewers' comments.
 About Channel Scraping
 This project uses a channel handle (e.g., astrum) to look up the channel ID and its upload playlist, scrape all videos in that playlist, and retrieve statistics and comments for each video. This method is ideal for content creators analyzing their own channel, researchers studying public YouTube creators, and building dashboards for channel performance insights.
@@ -92,10 +91,3 @@ youtube_channel_scraper/
 
 ## Continuous Enhancement Strategies for the Channel
 Throughout the project, continuous implementation focuses on understanding trends or recent top searches related to space, earth, and astronaut topics on the internet, utilizing data from Google Trends to continually enrich channel content variety. By referring to channel data analytics reports, the project adjusts video placement strategies, while performing A/B tests on content, upload times, thumbnails, titles, and description strategies to better understand viewer behavior. Additionally, it includes competitor analysis to compare performance with other channels, reply-thread comment scraping, and LDA or embedding-based comment topic modeling to deepen insights. The goal is to increase the CTR rate while keeping track of all strategies implemented on the content to seek performance improvements.
----
-## Requirements
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
